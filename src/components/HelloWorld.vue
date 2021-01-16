@@ -1,150 +1,59 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
-          rel="noopener"
-          >babel</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router"
-          target="_blank"
-          rel="noopener"
-          >router</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex"
-          target="_blank"
-          rel="noopener"
-          >vuex</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
-          >eslint</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest"
-          target="_blank"
-          rel="noopener"
-          >unit-jest</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript"
-          target="_blank"
-          rel="noopener"
-          >typescript</a
-        >
-      </li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-          >Forum</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-          >Community Chat</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
-          >Twitter</a
-        >
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li>
-        <a href="https://router.vuejs.org" target="_blank" rel="noopener"
-          >vue-router</a
-        >
-      </li>
-      <li>
-        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
-          rel="noopener"
-          >vue-devtools</a
-        >
-      </li>
-      <li>
-        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
-          >vue-loader</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-          rel="noopener"
-          >awesome-vue</a
-        >
-      </li>
-    </ul>
+
+    <div class="nes-container is-dark with-title nes-pointer tournament" @click="goToTournament()">
+      <p class="title">Multigaming Level One - Du 11 au 31 Janvier</p>
+      <div>
+        <div class="lists">
+          <ul class="nes-list is-circle">
+            <li>Age of Empire II</li>
+            <li>Trackmania</li>
+            <li>Warsow</li>
+            <li>Golf with friends</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
+import {Options, Vue} from "vue-class-component";
 
 @Options({
-  props: {
-    msg: String
+  props: {},
+  methods: {
+    goToTournament() {
+      this.$router.push("/tournament/1");
+    }
   }
 })
 export default class HelloWorld extends Vue {
-  msg!: string;
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.tournament {
+  margin-top: 80px;
+  width: 1200px;
 }
+
+.hello {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 ul {
-  list-style-type: none;
-  padding: 0;
+  text-align: left;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+ul li::before {
+  color: white;
 }
-a {
-  color: #42b983;
+
+.nes-list.is-circle li::before {
+  color: white;
 }
 </style>
